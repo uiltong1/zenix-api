@@ -58,23 +58,14 @@ Route::resource('planos', 'api\PlanosController');
 Route::put('planos/update/{id}', 'api\PlanosController@update');
 Route::put('planos/{id}/toggle', 'api\PlanosController@toggle');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::post('auth/logout', 'api\AuthController@logout'); //ROTA PARA SAIR DO SISTEMA
 Route::apiResource('pessoas','api\PessoaController'); //ROTA PARA CONSULTAR DADOS PESSOAIS DE USUÁRIOS
 Route::post('pessoa/create', 'api\PessoaController@create'); //ROTA PARA INSERIR DADOS PESSOAIS DE USUÁRIOS
 Route::post('pessoa/update/{id}','api\PessoaController@update'); //ROTA PARA ALTERAR DADOS PESSOAIS DE USUÁRIOS
 Route::delete('pessoa/delete/{id}','api\PessoaController@destroy'); //ROTA PARA EXCLUIR DADOS PESSOAIS DE USUÁRIOS
+
+Route::post('plano_precos', 'api\PlanoPrecoController@store');
+Route::get('plano_precos/{id}/edit', 'api\PlanoPrecoController@edit');
+
 });
 
